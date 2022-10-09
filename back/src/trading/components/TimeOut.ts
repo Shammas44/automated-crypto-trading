@@ -24,23 +24,20 @@ class TimeOut {
     this.disabled = value;
   }
 
-  private timer() {
+  private sleep() {
     setTimeout(() => {
-      if (!this.disabled) {
-        this.callback();
-        this.disabled = true;
-      } else {
-        this.timer();
-      }
+      this.run();
     }, 1000);
   }
 
   run() {
-    while (
-      (!this.disabled && this.sim_real_clock.getTime()) ||
-      0 < this.time_to_stop
+    if (
+      !this.disabled &&
+      (this.sim_real_clock.getTime() || 0) < this.time_to_stop
     ) {
-      this.timer();
+      this.sleep();
+    } else if (!this.disabled) {
+      this.callback();
     }
   }
 }

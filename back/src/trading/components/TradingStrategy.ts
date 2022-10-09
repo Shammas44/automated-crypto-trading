@@ -25,7 +25,7 @@ class TradingStrategy implements TradingStrategyFeatures {
   om_2_ts: Denque | null;
 
   /**
-   * Creates an instance of TradingStrategy.
+   * @description Creates an instance of TradingStrategy.
    * @param {(TradingParameters | null)} [args=null]
    * @memberof TradingStrategy
    */
@@ -163,7 +163,7 @@ class TradingStrategy implements TradingStrategyFeatures {
   }
 
   /**
-   * @description
+   * @description TODO
    * @param {Order} order_execution
    * @return {*}  {void}
    * @memberof TradingStrategy
@@ -189,7 +189,7 @@ class TradingStrategy implements TradingStrategyFeatures {
   }
 
   /**
-   * @description
+   * @description TODO
    * @return {number}
    * @memberof TradingStrategy
    */

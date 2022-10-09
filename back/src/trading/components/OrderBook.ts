@@ -11,7 +11,7 @@ class OrderBook {
   current_ask: Order | null;
 
   /**
-   * Creates an instance of OrderBook.
+   * @description Creates an instance of OrderBook.
    * @param {*} [gt_2_ob=null]
    * @param {*} [ob_2_ts=null]
    * @memberof OrderBook
@@ -93,7 +93,7 @@ class OrderBook {
   }
 
   /**
-   * @description
+   * @description TODO
    * @param {Order} o
    * @return {*}  {(Order[] | null)}
    * @memberof OrderBook
@@ -223,7 +223,7 @@ class OrderBook {
   }
 
   /**
-   * @description dsiplay order book content
+   * @description display order book content
    * @memberof OrderBook
    */
   display_content(): void {

@@ -3,6 +3,7 @@ import Denque from "denque";
 import fs from "fs";
 import { AssetsKind } from "../trading/backTesting";
 import { stream, sourcePath } from "../config/config";
+import path from "path";
 
 export function getRoomSize(io: Server, roomName: string): number {
   let clientsInRoom;
@@ -43,7 +44,7 @@ export async function load_financial_data(
   hoursCount: number,
   output_file: string
 ) {
-  const file_path = `${sourcePath}/data/${output_file}`;
+  const file_path = path.resolve(`data/${output_file}`);
   try {
     const data = fs.readFileSync(file_path, "utf8");
     return data;

@@ -14,10 +14,10 @@ class SimulatedRealClock {
   }
 
   getTime() {
-    if (!this.simulated) {
-      return Date.now();
-    } else {
+    if (this.simulated) {
       return this.simulated_time;
+    } else {
+      return Date.now();
     }
   }
 }

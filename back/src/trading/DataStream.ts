@@ -75,11 +75,6 @@ class DataStream {
     return this.alpaca.getCryptoTrades(this.symbol, options);
   }
 
-  disconnect() {
-    const socket = this.alpaca.crypto_stream_v2;
-    socket.disconnect();
-  }
-
   getSocket() {
     return this.alpaca.crypto_stream_v2;
   }
@@ -92,6 +87,15 @@ class DataStream {
       trades: [dataStreamInstance.symbol],
       bars: [dataStreamInstance.symbol],
     });
+  }
+
+  disconnect() {
+    const socket = this.alpaca.crypto_stream_v2;
+    try {
+      socket.disconnect();
+    } catch (error) {
+      console.log("DataStream connection doesn't exist");
+    }
   }
 
   async onFirstConnect(dataName: string) {
